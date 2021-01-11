@@ -13,7 +13,7 @@ SRC		=	my/my_putchar.c			\
 			my/my_putstr.c			\
 			my/my_strlen.c			\
 			my/my_put_tbl.c			\
-			my_lprintf/my_lprintf.c	\
+			my_lprintf/my_lprintf.c
 
 OBJ		=	$(SRC:.c=.o)
 
@@ -23,7 +23,7 @@ $(NAME):	$(OBJ)
 			ar rc $(NAME) $(OBJ)
 
 clean:
-			rm -f my/$(OBJ)
+			rm -f $(OBJ)
 
 fclean:		clean
 			rm -f $(NAME)

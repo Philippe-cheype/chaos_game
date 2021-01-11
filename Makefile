@@ -14,12 +14,15 @@ RM		=	rm -f
 CP		=	cp -f
 
 SRC		=	src/main.c								\
-			src/utils_handler/utils_create.c		\
+			src/drawing/my_put_pixel.c				\
+			src/drawing/my_draw_diamond.c			\
+			src/math/my_average.c					\
+			src/math/my_random.c					\
+			src/point_handler/get_point.c			\
+			src/point_handler/show_points.c			\
 			src/utils_handler/framebuffer_clear.c	\
 			src/utils_handler/screen_end.c			\
-			src/point_handler/plot_points.c			\
-			src/point_handler/point_handler.c		\
-			src/point_handler/get_new_points.c		\
+			src/utils_handler/utils_create.c		\
 
 OBJ		=	$(SRC:.c=.o)
 

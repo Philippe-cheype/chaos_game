@@ -54,20 +54,22 @@ typedef struct pos_s {
     sfVector2i move;
 } pos_t;
 
+void screen_end(framebuffer_t *fb, vars_t *va, pos_t *pos);
 void framebuffer_clear(framebuffer_t *fb, sfColor color);
 framebuffer_t *framebuffer_create(void);
 vars_t *vars_create(framebuffer_t *fb);
 pos_t *pos_create(int ac, char **av);
 
 void draw_point(framebuffer_t *fb, pos_t *pos, sfColor color, int sides);
-void my_put_pixel(framebuffer_t *fb, sfVector2i point, sfColor color);
 void plot_points(framebuffer_t *fb, pos_t *pos, sfColor color);
 sfVector2i get_point(char *x, char *y);
-void get_new_points(pos_t *pos);
 void assign_random(pos_t *pos);
+
+void my_draw_diamond(framebuffer_t *fb, sfVector2i point, sfColor color);
+void my_put_pixel(framebuffer_t *fb, sfVector2i point, sfColor color);
+
+sfVector2i random_point(void);
 int my_average(int a, int b);
 int random_nth(int n);
-
-void screen_end(framebuffer_t *fb, vars_t *va, pos_t *pos);
 
 #endif /* LIB_H_ */

@@ -4,7 +4,7 @@
 ** File description:
 ** framebuffer_create - create the framebuffer
 ** vars_create        - creates the used variables for graphics
-** pos_create         - creates and assings values to the points a, b, c
+** pos_create         - creates and assigns values to the points a, b, c
 */
 
 #include <stdlib.h>
