@@ -12,13 +12,3 @@ int my_average(int a, int b)
 {
     return ((a + b) / 2);
 }
-
-void get_new_points(pos_t *pos)
-{
-    pos->b.x = my_average(pos->a.x, pos->b.x);
-    pos->b.y = my_average(pos->a.y, pos->b.y);
-    pos->c.x = my_average(pos->b.x, pos->c.x);
-    pos->c.y = my_average(pos->b.y, pos->c.y);
-    pos->a.x = my_average(pos->c.x, pos->a.x);
-    pos->a.y = my_average(pos->c.y, pos->a.y);
-}

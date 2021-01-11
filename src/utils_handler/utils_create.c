@@ -54,5 +54,7 @@ pos_t *pos_create(int ac, char **av)
         pos->c = get_point(av[5], av[6]);
     } else
         assign_random(pos);
+    pos->move.x = my_average(pos->a.x, pos->b.x);
+    pos->move.y = my_average(pos->a.y, pos->b.y);
     return (pos);
 }

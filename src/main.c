@@ -53,8 +53,7 @@ static void main_loop(framebuffer_t *fb, vars_t *va, pos_t *pos)
         while (sfRenderWindow_pollEvent(va->window, &va->event))
             event_handler(fb, va, pos);
         while (pos->depth <= DEPTH_MAX) {
-            get_new_points(pos);
-            plot_points(fb, pos, COLOR);
+            draw_point(fb, pos, COLOR, 3);
             pos->depth++;
         }
         sfTexture_updateFromPixels(va->texture, fb->pixels,    \

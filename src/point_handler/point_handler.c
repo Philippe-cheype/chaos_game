@@ -25,9 +25,17 @@ static sfVector2i random_point(void)
 {
     sfVector2i point;
 
-    point.x = rand() % (WIDTH + 1);
-    point.y = rand() % (HEIGHT + 1);
+    point.x = rand() % (WIDTH - 1) + 2;
+    point.y = rand() % (HEIGHT - 1) + 2;
     return (point);
+}
+
+int random_nth(int n)
+{
+    int res;
+
+    res = rand() % n;
+    return (res);
 }
 
 void assign_random(pos_t *pos)
@@ -36,4 +44,6 @@ void assign_random(pos_t *pos)
     pos->a = random_point();
     pos->b = random_point();
     pos->c = random_point();
+    pos->move.x = my_average(pos->a.x, pos->b.x);
+    pos->move.y = my_average(pos->a.y, pos->b.y);
 }
