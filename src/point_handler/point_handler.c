@@ -32,7 +32,7 @@ static sfVector2i random_point(void)
 
 void assign_random(pos_t *pos)
 {
-    srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL) * rand());
     pos->a = random_point();
     pos->b = random_point();
     pos->c = random_point();

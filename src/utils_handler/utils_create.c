@@ -47,6 +47,7 @@ pos_t *pos_create(int ac, char **av)
     pos_t *pos;
 
     pos = malloc(sizeof(*pos));
+    pos->depth = 0;
     if (ac == 7) {
         pos->a = get_point(av[1], av[2]);
         pos->b = get_point(av[3], av[4]);

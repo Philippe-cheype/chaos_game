@@ -14,6 +14,8 @@ int my_put_nbr(int nb);
 void my_put_tbl(const char **tbl);
 int my_strlen(char const *str);
 int my_getnbr(char const *str);
+char *my_getstr(int nb);
+char *my_strcat(char *dest, char const *src);
 
 #ifndef LPRINTF_H_
 #define LPRINTF_H_

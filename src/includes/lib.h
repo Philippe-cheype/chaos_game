@@ -28,6 +28,7 @@
 #define FPS              25
 
 #define COLOR            sfWhite
+#define DEPTH_MAX        10
 
 #endif /* ERROR_H_ */
 
@@ -46,6 +47,7 @@ typedef struct vars_s {
 } vars_t;
 
 typedef struct pos_s {
+    int depth;
     sfVector2i a;
     sfVector2i b;
     sfVector2i c;
@@ -54,6 +56,8 @@ typedef struct pos_s {
 framebuffer_t *framebuffer_create(void);
 vars_t *vars_create(framebuffer_t *fb);
 pos_t *pos_create(int ac, char **av);
+
+void framebuffer_clear(framebuffer_t *fb, sfColor color);
 
 void assign_random(pos_t *pos);
 sfVector2i get_point(char *x, char *y);

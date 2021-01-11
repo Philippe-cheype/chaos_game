@@ -7,8 +7,8 @@
 
 NAME	=	libmy.a
 
-SRC		=	my/my_getnbr.c			\
-			my/my_putchar.c			\
+SRC		=	my/my_putchar.c			\
+			my/my_getnbr.c			\
 			my/my_put_nbr.c			\
 			my/my_putstr.c			\
 			my/my_strlen.c			\
