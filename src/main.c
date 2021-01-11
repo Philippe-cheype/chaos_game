@@ -41,7 +41,7 @@ static void event_handler(framebuffer_t *fb, vars_t *va, pos_t *pos)
         if (va->event.key.code == sfKeyR) {
             assign_random(pos);
             framebuffer_clear(fb, sfBlack);
-            pos->depth = 0;
+            pos->steps = 0;
             plot_points(fb, pos, sfRed);
         }
 }
@@ -52,9 +52,9 @@ static void main_loop(framebuffer_t *fb, vars_t *va, pos_t *pos)
     while (sfRenderWindow_isOpen(va->window)) {
         while (sfRenderWindow_pollEvent(va->window, &va->event))
             event_handler(fb, va, pos);
-        while (pos->depth <= DEPTH_MAX) {
-            draw_point(fb, pos, COLOR, 3);
-            pos->depth++;
+        while (pos->steps <= DEPTH_MAX) {
+            draw_point(fb, pos, COLOR);
+            pos->steps++;
         }
         sfTexture_updateFromPixels(va->texture, fb->pixels,    \
                                     fb->width, fb->height, 0, 0);
@@ -69,14 +69,14 @@ int main(int ac, char **av)
     vars_t *va;
     pos_t *pos;
 
-    if (ac != 1 && ac != 2 && ac != 7) {
+    if (ac != 2) {
         BAD_PARAMS;
         return (ERROR_CODE);
     }
-    if (ac == 2 && param_handling(av) == INFO_CODE)       return (SUCCESS_CODE);
+    if (param_handling(av) == INFO_CODE) return (SUCCESS_CODE);
     if ((fb = framebuffer_create())   == ERROR_CODE_NULL) return (ERROR_CODE);
     if ((va = vars_create(fb))        == ERROR_CODE_NULL) return (ERROR_CODE);
-    if ((pos = pos_create(ac, av))    == ERROR_CODE_NULL) return (ERROR_CODE);
+    if ((pos = pos_create(av[1]))     == ERROR_CODE_NULL) return (ERROR_CODE);
     sfSprite_setTexture(va->sprite, va->texture, sfTrue);
     sfRenderWindow_setFramerateLimit(va->window, FPS);
     main_loop(fb, va, pos);

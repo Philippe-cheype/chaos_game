@@ -2,9 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** chaos_game
 ** File description:
-** get_point     - transforms char * to int and returns a sfVector2i
-** random_point  - generates semi-random numbers according to screen x and y
-** assign_random - assigns random values to points a, b and c
+** get_point - transforms char * to int and returns a sfVector2i
 */
 
 #include "../includes/lib.h"

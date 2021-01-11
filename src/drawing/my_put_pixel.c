@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** chaos_game (Workspace)
+** chaos_game
 ** File description:
-** my_put_pixel
+** my_put_pixel - puts a single pixel to screen given coordinates and a color
 */
 
 #include "../includes/lib.h"

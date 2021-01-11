@@ -1,8 +1,9 @@
 /*
 ** EPITECH PROJECT, 2021
-** chaos_game (Workspace)
+** chaos_game
 ** File description:
-** my_random
+** random_point - chooses a random point inside the game box
+** random_nth   - given n it will randomly generate an int from 0 - n
 */
 
 #include <stdlib.h>
@@ -20,8 +21,5 @@ sfVector2i random_point(void)
 
 int random_nth(int n)
 {
-    int res;
-
-    res = rand() % n;
-    return (res);
+    return (rand() % n);
 }

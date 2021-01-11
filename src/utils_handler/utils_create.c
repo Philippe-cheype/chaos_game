@@ -4,11 +4,12 @@
 ** File description:
 ** framebuffer_create - create the framebuffer
 ** vars_create        - creates the used variables for graphics
-** pos_create         - creates and assigns values to the points a, b, c
+** pos_create         - creates and assigns values to n points
 */
 
 #include <stdlib.h>
 #include "../includes/lib.h"
+#include "../includes/my.h"
 
 framebuffer_t *framebuffer_create(void)
 {
@@ -42,19 +43,22 @@ vars_t *vars_create(framebuffer_t *fb)
     return (va);
 }
 
-pos_t *pos_create(int ac, char **av)
+pos_t *pos_create(char *points_count)
 {
     pos_t *pos;
 
     pos = malloc(sizeof(*pos));
-    pos->depth = 0;
-    if (ac == 7) {
-        pos->a = get_point(av[1], av[2]);
-        pos->b = get_point(av[3], av[4]);
-        pos->c = get_point(av[5], av[6]);
-    } else
-        assign_random(pos);
-    pos->move.x = my_average(pos->a.x, pos->b.x);
-    pos->move.y = my_average(pos->a.y, pos->b.y);
+    if (!pos) return (ERROR_CODE_NULL);
+    if ((pos->pts_count = my_getnbr(points_count)) < 3) {
+        free(pos);
+        return (ERROR_CODE_NULL);
+    }
+    pos->points = malloc(sizeof(sfVector2i) * pos->pts_count);
+    if (!pos->points) {
+        free(pos);
+        return (ERROR_CODE_NULL);
+    }
+    pos->steps = 0;
+    assign_random(pos);
     return (pos);
 }

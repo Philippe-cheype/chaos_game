@@ -1,8 +1,14 @@
 /*
 ** EPITECH PROJECT, 2021
-** chaos_game (Workspace)
+** chaos_game
 ** File description:
-** my_draw_diamond
+** my_draw_diamond - draws a diamond shape given coords and a color.
+** Reference:
+**   X
+**  XXX
+** XXXXX
+**  XXX
+**   X
 */
 
 #include "../includes/lib.h"
