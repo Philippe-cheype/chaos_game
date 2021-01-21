@@ -26,6 +26,6 @@ Use `./chaos_game -h` for more information.
 
 #### Example
 
-<img src="assets/step_by_step_generation_3_points.gif" width="350"/>
-<img src="assets/instant_generation_3_points_1.png" height="250"/>
-<img src="assets/instant_generation_3_points_2.png" height="250"/>
+<img src="assets/step_by_step_generation_3_points.gif" height="400"/>
+<img src="assets/instant_generation_3_points_1.png" height="300"/>
+<img src="assets/instant_generation_3_points_2.png" height="300"/>
