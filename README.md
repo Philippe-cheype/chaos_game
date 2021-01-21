@@ -23,3 +23,9 @@ Use `./chaos_game -h` for more information.
 
 - Higher number of corners (more than a triangle)
 - Config file for all parameters
+
+#### Example
+
+<img src="assets/step_by_step_generation_3_points.gif" width="350"/>
+<img src="assets/instant_generation_3_points_1.png" height="250"/>
+<img src="assets/instant_generation_3_points_2.png" height="250"/>
